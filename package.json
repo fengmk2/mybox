@@ -1,0 +1,46 @@
+{
+  "name": "mybox",
+  "version": "1.0.0",
+  "description": "My private NAS",
+  "private": true,
+  "dependencies": {
+    "egg": "^2.13.0",
+    "egg-oss": "^2.0.0",
+    "egg-scripts": "^2.10.0",
+    "egg-view-nunjucks": "^2.2.0",
+    "mime-types": "^2.1.21"
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "autod-egg": "^1.1.0",
+    "egg-bin": "^4.9.0",
+    "egg-ci": "^1.10.0",
+    "egg-mock": "^3.20.1",
+    "eslint": "^5.9.0",
+    "eslint-config-egg": "^7.1.0"
+  },
+  "engines": {
+    "node": ">=10.13.0"
+  },
+  "scripts": {
+    "start": "egg-scripts start --daemon --title=egg-server-mybox",
+    "stop": "egg-scripts stop --title=egg-server-mybox",
+    "dev": "egg-bin dev",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod"
+  },
+  "ci": {
+    "version": "10, 11"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "fengmk2",
+  "license": "MIT"
+}

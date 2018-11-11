@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>MyBox</title>
+  </head>
+  <body>
+    <h2>{{ currentDirectory.name }}</h2>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Size</th>
+        <th>Category</th>
+        <th>Last Modified</th>
+      </tr>
+      {% for item in items %}
+      <tr>
+        <td><a href="/preview/{{ item.name }}">{{ item.name }}</a></td>
+        <td>{{ item.size }}</td>
+        <td>{{ item.category }}</td>
+        <td>{{ item.lastModified }}</td>
+      </tr>
+      {% endfor %}
+      {% for prefix in prefixes %}
+      <tr>
+        <td><a href="/home/{{ prefix }}">{{ prefix }}</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
